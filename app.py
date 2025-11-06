@@ -80,8 +80,6 @@ def about():
 def contact():
     return render_template('contact.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
     
 if __name__ == "__main__":
     from os import environ
