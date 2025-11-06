@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% block title %}SMART Cafe — Beranda{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Ngopi nyaman, suasana hangat.</h1>
+      <p>Temukan secangkir kebahagiaan di SMART Cafe—tempat berkumpul, bercerita, dan berkarya.</p>
+      <div class="hero-cta">
+        <a class="btn" href="{{ url_for('menu') }}">Lihat Menu</a>
+        <a class="btn-outline" href="{{ url_for('about') }}">Tentang Kami</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mug"></div>
+      <div class="steam s1"></div>
+      <div class="steam s2"></div>
+      <div class="steam s3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights container">
+  <div class="cards">
+    <div class="card">
+      <h3>Biji Pilihan</h3>
+      <p>Diracik dari biji kopi lokal terbaik Nusantara.</p>
+    </div>
+    <div class="card">
+      <h3>Tempat Nyaman</h3>
+      <p>Wi‑Fi cepat, stopkontak tersedia, dan suasana tenang.</p>
+    </div>
+    <div class="card">
+      <h3>Harga Bersahabat</h3>
+      <p>Rasa premium dengan harga yang ramah di kantong.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

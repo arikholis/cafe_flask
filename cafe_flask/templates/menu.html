@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% block title %}SMART Cafe — Menu{% endblock %}
+{% block content %}
+<section class="container page-head">
+  <h1>Menu</h1>
+  <p>Pilihan terbaik kami untuk menemani harimu.</p>
+</section>
+
+<section class="container menu-list">
+  {% for category, items in categories.items() %}
+    <h2 class="menu-category">{{ category }}</h2>
+    <div class="menu-grid">
+      {% for item in items %}
+        <article class="menu-card">
+          <div class="menu-card-head">
+            <h3>{{ item.name }}</h3>
+            <span class="price">{{ item.price|rupiah }}</span>
+          </div>
+          <p class="desc">{{ item.desc }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

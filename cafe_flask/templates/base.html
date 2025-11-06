@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}SMART Cafe{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="{{ url_for('home') }}" class="logo">SMART<span>Cafe</span></a>
+        <nav class="nav">
+          <a href="{{ url_for('home') }}">Beranda</a>
+          <a href="{{ url_for('menu') }}">Menu</a>
+          <a href="{{ url_for('about') }}">Tentang</a>
+          <a href="{{ url_for('contact') }}" class="btn">Kontak</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; {{ 2025 }} SMART Cafe. All rights reserved.</p>
+        <p><small>Developed by AKF</small></p>
+      </div>
+    </footer>
+
+    <script>
+      // Simple mobile nav toggle
+      const burger = document.getElementById('hamburger');
+      const nav = document.querySelector('.nav');
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        burger.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
